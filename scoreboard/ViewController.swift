@@ -10,16 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    @IBOutlet weak var image: UIImageView!
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    /*UIImage(contentsOfFile:副本.jpg)
+    let path = Bundle.main.path(forResource: "swift",ofType:"jpg")!
+    let imgNormal = UIImage(contentsOfFile:path)
+     */
+    
+    
+    /*var img = UIImage(named:"副本.jpg")    //初始化图片
+    var vimg = UIImageView(image:img )   //初始化图片View
+    vimg.frame.origin = CGPoint(x:0,y:20)
+    //指定图片显示的位置
+    //vImg.frame = CGRect(x:0,y:20,width:120,height:120);   //指定图片的位置以及显示的大小
+    self.view.addSubview(vImg)*/
+
+    override func viewDidLoad ( ) {
+        super.viewDidLoad()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
+    
+
 
