@@ -20,7 +20,6 @@ class ViewController: UIViewController {
             UIImage(named:"ios1")!,
             UIImage(named:"ios2")!
         ]
-    
     */
     
        image.contentMode = .scaleAspectFit
