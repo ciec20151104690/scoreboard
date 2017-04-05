@@ -12,27 +12,35 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
     @IBAction func playpicture(_ sender: UIButton) {
-        image.animationImages = (1...4).map{
+        /*image.animationImages = (1...4).map{
             UIImage(named:"ios\($0)")!
-        }
-        
-        /*image.animationImages = [
-            UIImage(named:"ios1")!,
-            UIImage(named:"ios2")!
+        }*/
+
+        image.animationImages = [
+            UIImage(named:"乒乓球桌面示意图")!,
+            UIImage(named:"ios1")!
         ]
-    */
-    
-       image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFit
         
-        image.animationDuration = 1
+        image.animationDuration = 10000000
         image.startAnimating()
- 
-
-
-
+        }
+    
+    @IBOutlet weak var red: UILabel!
+    
+    @IBOutlet weak var blue: UILabel!
+    
+    @IBAction func redget(_ sender: Any) {
+        red.text = red.text! + "1"
     }
     
-    override func viewDidLoad ( ) {
+    @IBAction func blueget(_ sender: Any) {
+        blue.text! = blue.text! + "1"
+    }
+    
+    
+    
+       override func viewDidLoad ( ) {
         super.viewDidLoad()
                //Dispose of any resources that can be recreated.
     }
