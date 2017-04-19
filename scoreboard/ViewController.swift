@@ -25,20 +25,25 @@ class ViewController: UIViewController {
         image.animationDuration = 10000000
         image.startAnimating()
         }
+   
+    @IBOutlet weak var Redimage: UIImageView!
+
     
+    
+    
+    
+    
+    
+    //分数加减
     @IBOutlet weak var red: UILabel!
-    
+    @IBAction func stepperRed(_ sender: UIStepper) {
+        red.text = "\(sender.value)"
+        
+    }
     @IBOutlet weak var blue: UILabel!
-    
-    @IBAction func redget(_ sender: Any) {
-        red.text = red.text! + "1"
-    }
-    
-    @IBAction func blueget(_ sender: Any) {
-        blue.text! = blue.text! + "1"
-    }
-    
-    
+    @IBAction func stepperBlue(_ sender: UIStepper) {
+         blue.text = "\(sender.value)"    }
+//分数加减
     
        override func viewDidLoad ( ) {
         super.viewDidLoad()
