@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIActionSheetDelegate{
 
     @IBOutlet weak var image: UIImageView!
     @IBAction func playpicture(_ sender: UIButton) {
@@ -28,6 +28,14 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var Redimage: UIImageView!
 
+    @IBAction func red(_ sender: UIButton) {
+        let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
+        actionSheet1.show(in: view)
+    }
+    @IBAction func blue(_ sender: UIButton) {
+        let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
+        actionSheet1.show(in: view)
+    }
     
     
     
