@@ -22,13 +22,29 @@ class ViewController: UIViewController,UIActionSheetDelegate{
         ]
         image.contentMode = .scaleAspectFit
         
-        image.animationDuration = 10
+        image.animationDuration = 10000
         image.startAnimating()
         }
-    @IBOutlet weak var resule: UILabel!
+    /*@IBOutlet weak var resule: UILabel!
     
     @IBAction func re(_ sender: UIButton) {
         resule.text=resule.text!+"红队"    }
+ */
+    
+    @IBAction func result(_ sender: UIButton) {
+        let alertwindow = UIAlertView(title: "比赛结果", message: "红队胜利", delegate: self, cancelButtonTitle: "确认")
+
+        alertwindow.show()
+        
+      
+        
+        
+    }
+    
+    @IBOutlet weak var label1: UILabel!
+    @IBAction func segChanged(_ sender: UISegmentedControl) {
+        label1.text = sender.titleForSegment(at:sender.selectedSegmentIndex)
+    }
     
     
     
@@ -47,9 +63,19 @@ class ViewController: UIViewController,UIActionSheetDelegate{
         let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
         actionSheet1.show(in: view)
     }
+ 
     //actionsheet
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+ 
     
     
     
