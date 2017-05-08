@@ -21,7 +21,6 @@ class ViewController: UIViewController,UIActionSheetDelegate{
             UIImage(named:"乒乓球桌面示意图副本")!
         ]
         image.contentMode = .scaleAspectFit
-        
         image.animationDuration = 10000
         image.startAnimating()
         }

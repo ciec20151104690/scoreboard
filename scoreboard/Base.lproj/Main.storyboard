@@ -29,7 +29,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="乒乓球桌面示意图副本" translatesAutoresizingMaskIntoConstraints="NO" id="crd-cT-AeM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="乒乓球桌面示意图副本" translatesAutoresizingMaskIntoConstraints="NO" id="crd-cT-AeM">
                                 <rect key="frame" x="67" y="367" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -65,11 +65,11 @@
                                     <action selector="blue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1i4-ps-AHS"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios1" translatesAutoresizingMaskIntoConstraints="NO" id="YZw-L9-oPj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios1" translatesAutoresizingMaskIntoConstraints="NO" id="YZw-L9-oPj">
                                 <rect key="frame" x="28" y="20" width="89" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios3" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-ob-zsd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios4" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-ob-zsd">
                                 <rect key="frame" x="241" y="20" width="91" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -128,7 +128,7 @@
                                     <action selector="segChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pn3-eK-war"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcI-kj-bNF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="比赛结果" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcI-kj-bNF">
                                 <rect key="frame" x="119" y="259" width="129" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -148,12 +148,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184.8" y="-402.54872563718146"/>
+            <point key="canvasLocation" x="1335" y="-430"/>
         </scene>
     </scenes>
     <resources>
         <image name="ios1" width="480" height="300"/>
-        <image name="ios3" width="480" height="300"/>
+        <image name="ios4" width="533" height="300"/>
         <image name="乒乓球桌面示意图副本" width="529" height="341"/>
     </resources>
 </document>
