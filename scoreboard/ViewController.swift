@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController,UIActionSheetDelegate{
-
+    
+    
+    
     @IBOutlet weak var image: UIImageView!
     @IBAction func playpicture(_ sender: UIButton) {
         /*image.animationImages = (1...4).map{
@@ -29,27 +31,6 @@ class ViewController: UIViewController,UIActionSheetDelegate{
     @IBAction func re(_ sender: UIButton) {
         resule.text=resule.text!+"红队"    }
  */
-    
-    @IBAction func result(_ sender: UIButton) {
-        let alertwindow = UIAlertView(title: "比赛结果", message: "红队胜利", delegate: self, cancelButtonTitle: "确认")
-
-        alertwindow.show()
-        
-      
-        
-        
-    }
-    
-    @IBOutlet weak var label1: UILabel!
-    @IBAction func segChanged(_ sender: UISegmentedControl) {
-        label1.text = sender.titleForSegment(at:sender.selectedSegmentIndex)
-    }
-    
-    
-    
-    
-    
-  
     
     //actionsheet
     @IBOutlet weak var Redimage: UIImageView!
@@ -84,13 +65,26 @@ class ViewController: UIViewController,UIActionSheetDelegate{
     
     //分数加减
     @IBOutlet weak var red: UILabel!
+    
     @IBAction func stepperRed(_ sender: UIStepper) {
+    
         red.text = "\(sender.value)"
+        if(sender.value==11){
+            let alertwindow = UIAlertView(title: "比赛结果", message: "红队胜利", delegate: self, cancelButtonTitle: "确认")
+            
+            alertwindow.show()
+        }
         
     }
     @IBOutlet weak var blue: UILabel!
     @IBAction func stepperBlue(_ sender: UIStepper) {
-         blue.text = "\(sender.value)"    }
+         blue.text = "\(sender.value)"
+        if(sender.value==11){
+            let alertwindow = UIAlertView(title: "比赛结果", message: "蓝队胜利", delegate: self, cancelButtonTitle: "确认")
+            
+            alertwindow.show()
+        }
+    }
 //分数加减
     
        override func viewDidLoad ( ) {
