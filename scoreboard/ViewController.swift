@@ -7,9 +7,12 @@
 //
 
 import UIKit
+var a:Int = 0
+var b:Int = 0
 
 class ViewController: UIViewController,UIActionSheetDelegate{
     
+ 
     
     
     @IBOutlet weak var image: UIImageView!
@@ -46,22 +49,7 @@ class ViewController: UIViewController,UIActionSheetDelegate{
  
     //actionsheet
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
-    
-    
-    
-    
-    
-    
+
     
     //分数加减
     @IBOutlet weak var red: UILabel!
@@ -69,22 +57,62 @@ class ViewController: UIViewController,UIActionSheetDelegate{
     @IBAction func stepperRed(_ sender: UIStepper) {
     
         red.text = "\(sender.value)"
-        if(sender.value==11){
+        /*if(sender.value==11){
+                     }
+      */
+            
+            if(sender.value>=11 ){
+                a = a+1
+                redscore.text=("\(a)")
+                
+                
+            }
+        if(a==4){
             let alertwindow = UIAlertView(title: "比赛结果", message: "红队胜利", delegate: self, cancelButtonTitle: "确认")
             
             alertwindow.show()
+            a = 0
+            sender.value = 0
+
+        }
         }
         
-    }
+   
+    
     @IBOutlet weak var blue: UILabel!
     @IBAction func stepperBlue(_ sender: UIStepper) {
          blue.text = "\(sender.value)"
-        if(sender.value==11){
+       
+        if(sender.value>=11){
+            b = b+1
+            bluescore.text = ("\(b)")
+            
+        }
+        
+        if(b==4){
             let alertwindow = UIAlertView(title: "比赛结果", message: "蓝队胜利", delegate: self, cancelButtonTitle: "确认")
             
             alertwindow.show()
+            
         }
     }
+        @IBAction func restart(_ sender: UIButton) {
+        red.text = "0"
+        blue.text = "0"
+        redscore.text = "0"
+        bluescore.text = "0"
+    
+    }
+    
+    @IBOutlet weak var redscore: UILabel!
+    
+    @IBOutlet weak var bluescore: UILabel!
+    
+    
+    
+    
+    
+    
 //分数加减
     
        override func viewDidLoad ( ) {
