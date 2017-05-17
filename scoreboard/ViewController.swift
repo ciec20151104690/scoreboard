@@ -12,7 +12,8 @@ var b:Int = 0
 var pic:Int = 0
 var A:Int = 0
 var B:Int = 0
-class ViewController: UIViewController,UIActionSheetDelegate{
+class ViewController: UIViewController,UIActionSheetDelegate,UIImagePickerControllerDelegate,
+UINavigationControllerDelegate{
     @IBOutlet weak var image: UIImageView!
     @IBAction func playpicture(_ sender: UIButton) {
         /*image.animationImages = (1...4).map{
@@ -34,12 +35,35 @@ class ViewController: UIViewController,UIActionSheetDelegate{
  */
     
     //actionsheet
+    
     @IBOutlet weak var Redimage: UIImageView!
+    
+    @IBOutlet weak var BlueImage: UIImageView!
+    
     @IBAction func red(_ sender: UIButton) {
         let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
-        actionSheet1.show(in: view)
-    }
-    @IBAction func blue(_ sender: UIButton) {
+    actionSheet1.show(in: view)
+            if(pic==0){
+                A=1
+                B=0
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+                    //初始化图片控制器
+                    let picker = UIImagePickerController()//设置代理
+                    picker.delegate = self
+                    //指定图片控制器类型
+                    picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                    //弹出控制器，显示界面
+                    self.present(picker,animated: true, completion: {
+                        ()->Void in
+                        }
+                    )
+                    
+                }else{
+                    print("读取相册错误")
+                }
+            }
+        }
+       @IBAction func blue(_ sender: UIButton) {
         let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
         actionSheet1.show(in: view)
     }

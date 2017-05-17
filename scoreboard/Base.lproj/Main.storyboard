@@ -148,6 +148,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="BlueImage" destination="kAd-ob-zsd" id="0Dj-38-zLj"/>
                         <outlet property="Redimage" destination="YZw-L9-oPj" id="kho-ig-AoJ"/>
                         <outlet property="blue" destination="xKi-Ws-54a" id="67o-sW-ZSF"/>
                         <outlet property="bluescore" destination="dw7-2o-cMe" id="CfU-4x-Pzw"/>
