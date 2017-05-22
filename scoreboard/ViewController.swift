@@ -41,18 +41,18 @@ UINavigationControllerDelegate{
     @IBOutlet weak var BlueImage: UIImageView!
     
     @IBAction func red(_ sender: UIButton) {
-        let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
+       /*actionsheet下弹提示窗口
+         let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
     actionSheet1.show(in: view)
+         */
+        //调用系统相册添加选手图片⬇️
             if(pic==0){
                 A=1
                 B=0
                 if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-                    //初始化图片控制器
-                    let picker = UIImagePickerController()//设置代理
+                    let picker = UIImagePickerController()
                     picker.delegate = self
-                    //指定图片控制器类型
                     picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                    //弹出控制器，显示界面
                     self.present(picker,animated: true, completion: {
                         ()->Void in
                         }
@@ -63,12 +63,46 @@ UINavigationControllerDelegate{
                 }
             }
         }
-       @IBAction func blue(_ sender: UIButton) {
-        let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
-        actionSheet1.show(in: view)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print(info)
+        let image:UIImage!
+        image=info[UIImagePickerControllerOriginalImage] as! UIImage
+        if(A==1){
+            Redimage.image = image
+        }
+        else if(B==1){
+            BlueImage.image = image
+        }
+        picker.dismiss(animated: true, completion: {
+            () -> Void in
+        })
     }
- 
-    //actionsheet
+
+
+
+       @IBAction func blue(_ sender: UIButton) {
+        /*actionsheet下弹提示窗口
+         let actionSheet1 = UIActionSheet(title: "选取图片", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "从图库中选取",otherButtonTitles:"拍照")
+        actionSheet1.show(in: view)
+         */
+        if(pic==0){
+            A=0
+            B=1
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                self.present(picker,animated: true, completion: {
+                    ()->Void in
+                }
+                )
+                
+            }else{
+                print("读取相册错误")
+            }
+        }
+    }
+    
     //分数加减
     @IBOutlet weak var red: UILabel!
     @IBAction func stepperRed(_ sender: UIStepper) {
@@ -93,7 +127,7 @@ UINavigationControllerDelegate{
     
     @IBOutlet weak var blue: UILabel!
     @IBAction func stepperBlue(_ sender: UIStepper) {
-         blue.text = "\(sender.value)"
+        blue.text = "\(sender.value)"
         if(sender.value>=11){
             b = b+1
             bluescore.text = ("\(b)")
@@ -117,8 +151,6 @@ UINavigationControllerDelegate{
     @IBOutlet weak var redscore: UILabel!
     
     @IBOutlet weak var bluescore: UILabel!
-
-//分数加减
     
        override func viewDidLoad ( ) {
         super.viewDidLoad()
